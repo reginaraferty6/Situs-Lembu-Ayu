@@ -79,15 +79,21 @@
     const container = document.getElementById('canvas-container');
 
     const scene = new THREE.Scene();
-    scene.background = new THREE.Color(0xffffff);
+    scene.background = new THREE.Color(0xf0f0f0);
 
-    const camera = new THREE.PerspectiveCamera(60, container.clientWidth / 600, 0.1, 1000);
+    const camera = new THREE.PerspectiveCamera(
+      60,
+      container.clientWidth / 600,
+      0.1,
+      1000
+    );
     camera.position.set(3, 2, 5);
 
     const renderer = new THREE.WebGLRenderer({ antialias: true });
     renderer.setSize(container.clientWidth, 600);
     container.appendChild(renderer.domElement);
 
+    // Cahaya
     const light = new THREE.HemisphereLight(0xffffff, 0x444444, 1.2);
     scene.add(light);
 
@@ -97,18 +103,21 @@
 
     const loader = new THREE.GLTFLoader();
 
-    loader.load("Situs_lembuayu.glb", function (gltf) {
+    // MODEL 1 — Situs Lembu Ayu
+    loader.load("Situs_lembuayu.glb", (gltf) => {
       const situs = gltf.scene;
       situs.position.set(0, 0, 0);
       scene.add(situs);
     });
 
-    loader.load("makam_ki_pandung_aguna.glb", function (gltf) {
+    // MODEL 2 — Makam Ki Pandung Aguna
+    loader.load("makam_ki_pandung_aguna.glb", (gltf) => {
       const makam = gltf.scene;
       makam.position.set(3, 0, 0);
       scene.add(makam);
     });
 
+    // Kontrol Kamera
     const controls = new THREE.OrbitControls(camera, renderer.domElement);
     controls.enableDamping = true;
 
