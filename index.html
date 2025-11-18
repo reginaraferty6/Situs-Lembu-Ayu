@@ -113,11 +113,10 @@
       scene.add(gltf.scene);
     });
 
-    // Model 2 – Makam Ki Pandung Aguna
-    loader.load("makam_ki_pandung_aguna.glb", (gltf) => {
-      gltf.scene.position.set(3, 0, 0);
-      scene.add(gltf.scene);
-    });
+    loader.load("./makam_ki_pandung_aguna.glb", (gltf) => {
+  gltf.scene.position.set(3, 0, 0);
+  scene.add(gltf.scene);
+});
 
     // Orbit Control
     const controls = new OrbitControls(camera, renderer.domElement);
