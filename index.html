@@ -67,15 +67,92 @@
   </div>
 </section>
   
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Situs Lembu Ayu</title>
+
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f8f9fa; color: #333; }
+    header { background: #4CAF50; color: white; text-align: center; padding: 1rem; }
+    nav { display: flex; justify-content: space-around; background: #333; }
+    nav a { color: white; text-decoration: none; padding: 1rem; flex: 1; text-align: center; }
+    nav a:hover { background: #4CAF50; }
+    section { padding: 2rem; }
+    h2 { color: #4CAF50; margin-top: 0; }
+    .card { background: white; padding: 1rem; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin-bottom: 2rem; }
+    .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
+    .gallery img { width: 100%; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
+    model-viewer { width: 100%; height: 500px; border-radius: 10px; background: #eee; }
+    iframe { width: 100%; height: 400px; border: 0; border-radius: 10px; }
+    footer { text-align: center; background: #333; color: white; padding: 1rem; margin-top: 2rem; }
+  </style>
+
+  <!-- Model Viewer -->
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+</head>
+
+<body>
+
+<header>
+  <h1>Situs Lembu Ayu</h1>
+  <p>Warisan Sejarah & Cerita Rakyat Banyumas</p>
+</header>
+
+<nav>
+  <a href="#sejarah">Sejarah</a>
+  <a href="#galeri">Galeri</a>
+  <a href="#model3d">3D</a>
+  <a href="#lokasi">Lokasi</a>
+</nav>
+
+<section id="sejarah" class="card">
+  <h2>Sejarah Situs Lembu Ayu</h2>
+  <p>Keberadaan situs ini diperkirakan berasal dari masa Kerajaan Medang atau Mataram Kuno,
+     yang berjaya pada abad ke-8 hingga ke-10 Masehi. Temuan utama di situs ini adalah sebuah arca berbentuk lembu,
+     yang diyakini sebagai representasi Nandi, kendaraan suci Dewa Siwa dalam ajaran agama Hindu.
+     Arca Nandi biasanya ditempatkan di depan candi Hindu-Siwa sebagai penjaga dan perantara spiritual.</p>
+</section>
+
+<section id="galeri" class="card">
+  <h2>Galeri Foto</h2>
+  <div class="gallery">
+    <img src="foto1.jpg" alt="Foto 1">
+    <img src="foto2.jpg" alt="Foto 2">
+    <img src="foto3.jpg" alt="Foto 3">
+    <img src="foto4.jpg" alt="Foto 4">
+    <img src="foto5.jpg" alt="Foto 5">
+  </div>
+</section>
+
 <section id="model3d" class="card">
   <h2>Model 3D Situs Lembu Ayu</h2>
+
   <model-viewer src="Situs_lembuayu.glb"
-                alt="3D Situs Lembu Ayu"
+                alt="Model 3D Situs Lembu Ayu"
                 auto-rotate
                 camera-controls
                 ar>
   </model-viewer>
+
 </section>
+
+<section id="lokasi" class="card">
+  <h2>Lokasi Situs Lembu Ayu</h2>
+  <iframe 
+    src="https://www.google.com/maps?q=-7.356894,109.289275&z=17&output=embed"
+    loading="lazy">
+  </iframe>
+</section>
+
+<footer>
+  <p>&copy; 2025 Situs Lembu Ayu | Dibuat untuk edukasi dan pelestarian budaya</p>
+</footer>
+
+</body>
+</html>
 
 <section id="lokasi" class="card">
   <h2>Lokasi Situs Lembu Ayu</h2>
